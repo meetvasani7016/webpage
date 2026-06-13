@@ -1,11 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Demo</h1>
+    <script>
+        let bal = 5000;
+        let depo, withd;
+
+        let ui = Number(prompt("1. Check Balance\n2. Deposit\n3. Withdrawal\n4. Exit"));
+
+        while (ui !== 4) {
+
+            switch (ui) {
+
+                case 1:
+                    alert("Balance: " + bal);
+                    break;
+
+                case 2:
+                    depo = Number(prompt("Enter amount to Deposit"));
+                    bal += depo;
+                    alert("New Balance: " + bal);
+                    break;
+
+                case 3:
+                    withd = Number(prompt("Enter withdrawal amount"));
+
+                    if (withd <= bal) {
+                        bal -= withd;
+                        alert("New Balance: " + bal);
+                    } else {
+                        alert("Insufficient balance");
+                    }
+                    break;
+
+                default:
+                    alert("Invalid choice");
+            }
+
+            // ask again
+            ui = Number(prompt("1. Check Balance\n2. Deposit\n3. Withdrawal\n4. Exit"));
+        }
+
+        alert("Thank you");
+    </script>
 </body>
+
 </html>
